@@ -37,6 +37,9 @@
 
                             </div>
                         </div>
+                        <div class="d-flex justify-content-center">
+                            {!! $posts->links() !!}
+                        </div>
                     </div>
                 </div>
             </div>

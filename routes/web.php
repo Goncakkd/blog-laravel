@@ -6,6 +6,7 @@ use App\posts;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,13 +39,13 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 Route::get('/', function () {
-    $posts = posts::all();
+    $posts = posts::paginate(10);
     return view('home', compact('posts'));
 });
 
 
 Route::get('/home', function () {
-    $posts = posts::all();
+    $posts = posts::paginate(10);
     return view('home', compact('posts'));
 });
 
